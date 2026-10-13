@@ -1,0 +1,88 @@
+<DOCTYPE! html>
+    <html>
+        <head>
+            <title> Travel booking website </title>
+            <style> 
+                .container1{
+                    display: flex;
+                    text-align: center;
+                    background-color: #f2f2f2;
+                    padding: 20px;
+                }
+                .box1{
+                    background-color: #873e3e;
+                    padding: 20px;
+                    margin: 10px;
+
+                }
+                .container2{
+                    display: grid;
+                    text-align: center;
+                    background-color: #f2f2f2;
+                    padding: 20px;
+                }
+                .box2{
+                    background-color: #873e3e;
+                    padding: 20px;
+                    margin: 10px;
+
+                }
+            </style>
+        </head>
+        <body>
+            <h1> login/signup Sections </h1>
+            <center><h2>come to travel bookign website</h2> </center>
+            <hr>
+            <h2> SIGNUP SECTION </h2>
+            <label> Email :</label>
+            <input type="mail" id="newmail" placeholder="Enter your email">
+            <label> Password :</label>
+            <input type="password" id="newpassword" placeholder="Enter your password">
+            <button onclick="signup()">Sign Up</button>
+
+            <hr>
+            <h2> Login </h2>
+            <label> Email :</label>
+            <input type="mail" id="mail1" placeholder="Enter your email">
+            <label> Password :</label>
+            <input type="password" id="password1" placeholder="Enter your password">
+            <button onclick="login()">Login</button>
+            <script>
+                function signup() {
+                    var email = document.getElementById("newmail").value;
+                    var password = document.getElementById("newpassword").value;
+                    localStorage.setItem("email", email);
+                    localStorage.setItem("password", password);
+                    alert("Signup successful!");
+                }
+
+                function login() {
+                    var email = document.getElementById("mail1").value;
+                    var password = document.getElementById("password1").value;
+                    var storedEmail = localStorage.getItem("email");
+                    var storedPassword = localStorage.getItem("password");
+
+                    if (email === storedEmail && password === storedPassword) {
+                        alert("Login successful!");
+                    } else {
+                        alert("Invalid email or password.");
+                    }
+                }
+            </script>
+
+            <div class=container1>
+                <div class="box1"> Paris </div>
+                <div class="box1"> vijayawada </div>
+                <div class="box1"> chennai </div>
+            </div>
+            <div class=container2>
+                <div class="box2"> Paris </div>
+                <div class="box2"> vijayawada </div>
+                <div class="box2"> chennai </div>
+                <div class="box2"> Paris </div>
+                <div class="box2"> vijayawada </div>
+                <div class="box2"> chennai </div>
+            </div>
+        </body>
+    </html>
+</DOCTYPE>
